@@ -1,0 +1,36 @@
+DATASET:
+  DATA_ROOT: "../data/"
+  WORKERS: 16 # 8
+  PIN_MEMORY: True
+  NUM_CLASSES: 5
+  DATASET_NAME: "ADNI"
+  NUM_ROI: 160
+  NUM_FOLD: 5
+  CV: True
+  TYPE: "new" # old / new
+  UNDER_SAMPLE: False
+  NUM_DATA: 0 # 0 for using all data (memory issue)
+  THRESHOLD: 10000
+  NORMALIZE: False
+  NODE_FEATURE: test
+  NODE_FEATURE_NUM: 3
+
+SETTING:
+  RANDOM_SEED: 42
+  LOG_DIR: "./2024_07_15"
+  LOG_FILE: "test.log"
+
+EXTRA_ARGS:
+  ARGS: "None"
+
+NET:
+  LR: 0.001 # 0.001
+  LR_FACTOR: 0.5
+  LR_PAT: 9
+  WEIGHT_DECAY: 0.005 # 0.0005 weight decay를 바꿔보자
+
+TRAIN:
+  BATCH_SIZE: 128
+  HIDDEN_DIM: 64
+  MAX_EPOCHS: 200
+  NUM_GCN_LAYER: 1
